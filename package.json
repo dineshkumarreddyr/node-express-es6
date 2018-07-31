@@ -1,0 +1,38 @@
+{
+  "name": "ijpservice",
+  "version": "1.0.0",
+  "description": "IT Job Portal API Services",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "start": "npm run build && node dist/index.js"
+  },
+  "keywords": [
+    "Job",
+    "Portal"
+  ],
+  "author": "Dinesh Rachumalla",
+  "license": "MIT",
+  "dependencies": {
+    "app-root-path": "^2.1.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "rimraf": "^2.6.2",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "nodemon": "^1.18.3"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "dist/*"
+    ],
+    "execMap": {
+      "js": "npm run build && node dist/index.js"
+    }
+  }
+}
